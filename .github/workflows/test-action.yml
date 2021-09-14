@@ -3,8 +3,9 @@ on: [push]
 jobs:
   unit-test:
     runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
       - uses: action/setup-go@v2
         with:
-          go-version: '^1.17'
+          go-version: '1.17'
       - run: go test -run ^TestSum$ github.com/Pyt45/workflow-testing.git/utils 
